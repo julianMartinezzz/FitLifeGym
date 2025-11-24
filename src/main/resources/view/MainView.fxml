@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="0"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.fitlife.controller.MainController"
+      stylesheets="@../styles.css" styleClass="root">
+
+    <VBox styleClass="login-card" maxWidth="480.0" spacing="10.0" alignment="TOP_CENTER">
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <Label text="Fitlife Gym - Panel de Control" styleClass="label-titulo-login" style="-fx-font-size: 20px;"/>
+
+        <HBox fx:id="panelStats" spacing="10" styleClass="stats-container">
+            <VBox styleClass="stat-card">
+                <Label text="Clientes Activos" styleClass="label-stat-title"/>
+                <Label fx:id="lblClientes" text="--" styleClass="label-stat-value, stat-blue"/>
+            </VBox>
+
+            <VBox styleClass="stat-card">
+                <Label text="Ingresos Mes" styleClass="label-stat-title"/>
+                <Label fx:id="lblIngresos" text="/$0" styleClass="label-stat-value, stat-green"/>
+            </VBox>
+
+            <VBox styleClass="stat-card">
+                <Label text="Clase Popular" styleClass="label-stat-title"/>
+                <Label fx:id="lblClasePop" text="--" styleClass="label-stat-value, stat-orange" style="-fx-font-size: 16px;"/>
+            </VBox>
+        </HBox>
+        <Label text="Seleccione una opción" styleClass="label-subtitulo"/>
+
+        <Button fx:id="btnClientes" text="Inscripción de Clientes" onAction="#irAClientes"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+        <Button fx:id="btnReportes" text="Gestión de Clientes" onAction="#irAReportes"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+        <Button fx:id="btnInstructores" text="Gestión de Entrenadores" onAction="#irAInstructores"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+
+        <Button fx:id="btnClases" text="Programar Clases" onAction="#irAClases"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+        <Button fx:id="btnReservas" text="Gestión de Reservas (Admin)" onAction="#irAReservas"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+
+
+
+        <Button text="Ver Horarios Disponibles" onAction="#irAHorarios"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+        <Button fx:id="btnMisReservas" text="Mis Reservas" onAction="#irAMisReservas"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+        <Button fx:id="btnPagos" text="Pagos" onAction="#irAPagos"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+
+        <Button fx:id="btnMisClases" text="Mis Clases y Asistencia" onAction="#irAMisClasesInstructor"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+
+
+        <Button text="Mi Perfil" onAction="#irAPerfil"
+                styleClass="button-menu" maxWidth="Infinity"/>
+
+
+        <Label text=" "/>
+
+        <Button text="Cerrar Sesión" onAction="#salir"
+                styleClass="button-salir" maxWidth="Infinity"/>
+
+    </VBox>
+</VBox>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700" prefWidth="1000" styleClass="root" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fitlife.controller.PagoController">
+
+    <left>
+        <VBox prefWidth="200" spacing="5" styleClass="sidebar">
+            <padding><Insets left="10" right="10" top="30" /></padding>
+            <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 0 0 20 10;" text="FitLife Gym" />
+
+            <Button maxWidth="Infinity" onAction="#volverMenu" styleClass="button-sidebar" text="Inicio" />
+            <Button onAction="#irAClases" styleClass="button-sidebar" maxWidth="Infinity" text="Clases" />
+            <Button onAction="#irAReservas" styleClass="button-sidebar" maxWidth="Infinity" text="Reservas" />
+            <Button style="-fx-text-fill: white; -fx-background-color: #222;" styleClass="button-sidebar" maxWidth="Infinity" text="Pagos" />
+            <Button styleClass="button-sidebar" maxWidth="Infinity" text="Perfil" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: #050505;">
+            <padding><Insets bottom="30" left="40" right="40" top="30" /></padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <VBox>
+                    <Label styleClass="label-breadcrumb" text="Administración / Pagos" />
+                    <Label styleClass="label-section-title" text="Registrar Pago" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label style="-fx-text-fill: #888888; -fx-font-style: italic;" text="Administrador" />
+            </HBox>
+
+            <VBox spacing="10" styleClass="panel-oscuro">
+                <Label styleClass="label-panel-title" text="1. Buscar Cliente" />
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <Label style="-fx-text-fill: #DDD;" text="Documento / Cédula:" />
+                    <TextField fx:id="txtDocumento" prefWidth="200" promptText="Ingrese documento..." styleClass="text-field" />
+                    <Button onAction="#buscarCliente" styleClass="button-pill" text="Buscar" />
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Cliente Seleccionado:" style="-fx-text-fill: #888; -fx-font-size: 12px;"/>
+                    <Label fx:id="lblNombreCliente" text="---" style="-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="10" styleClass="panel-oscuro" VBox.vgrow="ALWAYS">
+                <Label styleClass="label-panel-title" text="2. Detalles de la Transacción" />
+
+                <GridPane hgap="20" vgap="20">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50" />
+                    </columnConstraints>
+
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label style="-fx-text-fill: #888;" text="Seleccionar Plan / Tarifa" />
+                        <ComboBox fx:id="comboPlanPago" maxWidth="Infinity" promptText="Seleccione tarifa..." styleClass="combo-box" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label style="-fx-text-fill: #888;" text="Método de Pago" />
+                        <ComboBox fx:id="comboMetodo" maxWidth="Infinity" promptText="Seleccione..." styleClass="combo-box" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                        <Label style="-fx-text-fill: #888;" text="Concepto / Plan" />
+                        <TextField fx:id="txtConcepto" promptText="Ej: Mensualidad Enero" styleClass="text-field" />
+                    </VBox>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <HBox alignment="CENTER_RIGHT">
+                    <Button onAction="#guardarPago" prefWidth="200" style="-fx-background-color: #27ae60; -fx-text-fill: white;" styleClass="button-pill" text="Confirmar Pago" />
+                </HBox>
+            </VBox>
+
+            <Label fx:id="lblMensaje" style="-fx-font-weight: bold;" />
+
+        </VBox>
+    </center>
+</BorderPane>

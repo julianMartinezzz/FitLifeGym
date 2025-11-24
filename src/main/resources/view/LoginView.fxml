@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="rootLogin" alignment="CENTER" spacing="0"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.fitlife.controller.LoginController"
+      stylesheets="@../styles.css" styleClass="root">
+
+    <VBox styleClass="login-card" maxWidth="350.0" spacing="15.0" alignment="TOP_CENTER"> <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../images/logo_fitlife.png" />
+        </image>
+        <VBox.margin>
+            <Insets bottom="10.0" />
+        </VBox.margin>
+    </ImageView>
+        <Label text="Bienvenido" styleClass="label-titulo-login"/>
+
+        <VBox spacing="5.0" alignment="CENTER_LEFT">
+            <Label text="Email o Usuario" styleClass="label-input"/>
+            <TextField fx:id="txtUser" promptText="ej: admin" prefHeight="40.0"/>
+        </VBox>
+
+        <VBox spacing="5.0" alignment="CENTER_LEFT">
+            <Label text="Contraseña" styleClass="label-input"/>
+            <PasswordField fx:id="txtPass" promptText="••••••" prefHeight="40.0"/>
+        </VBox>
+
+        <Label text=" " style="-fx-font-size: 5px;"/>
+
+        <Button text="Iniciar Sesión" onAction="#ingresar"
+                styleClass="button-login" maxWidth="Infinity"/>
+
+        <Label fx:id="lblMensaje" style="-fx-text-fill: #FF5555; -fx-font-size: 11px;"/>
+
+    </VBox>
+
+</VBox>

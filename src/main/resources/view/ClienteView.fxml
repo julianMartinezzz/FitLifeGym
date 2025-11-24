@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fitlife.controller.ClienteController"
+            stylesheets="@../styles.css" styleClass="root"
+            prefWidth="900" prefHeight="600">
+
+    <left>
+        <VBox spacing="5" prefWidth="200" styleClass="sidebar">
+            <padding><Insets top="30" left="10" right="10"/></padding>
+
+            <Label text="FitLife Gym" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 0 0 20 10;"/>
+
+            <Button text="Inicio" onAction="#volverMenu" styleClass="button-sidebar" maxWidth="Infinity"/>
+
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: #050505;">
+            <padding>
+                <Insets top="30" right="40" bottom="30" left="40"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <VBox>
+                    <Label text="Administración / Gestión de Cliente" styleClass="label-breadcrumb"/>
+                    <Label text="Gestión de Cliente" styleClass="label-section-title"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Guardar Cliente" onAction="#guardarCliente" styleClass="button-pill"/>
+            </HBox>
+
+            <GridPane hgap="20" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50"/>
+                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50"/>
+                </columnConstraints>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="Documento" style="-fx-text-fill: #888888;"/>
+                    <TextField fx:id="txtDocumento" styleClass="text-field"/>
+                </VBox>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="Nombre Completo" style="-fx-text-fill: #888888;"/>
+                    <TextField fx:id="txtNombre" styleClass="text-field"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="Correo" style="-fx-text-fill: #888888;"/>
+                    <TextField fx:id="txtCorreo" styleClass="text-field"/>
+                </VBox>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="Teléfono" style="-fx-text-fill: #888888;"/>
+                    <TextField fx:id="txtTelefono" styleClass="text-field"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <Label text="Membresía" style="-fx-text-fill: #888888;"/>
+                    <ComboBox fx:id="comboPlan" maxWidth="Infinity" styleClass="combo-box"/>
+                </VBox>
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <Label text="Dirección" style="-fx-text-fill: #888888;"/>
+                    <TextField fx:id="txtDireccion" styleClass="text-field"/>
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <Label text="Fecha Inicio" style="-fx-text-fill: #888888;"/>
+                    <DatePicker fx:id="dateInicio" maxWidth="Infinity" styleClass="date-picker"/>
+                </VBox>
+
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+            </GridPane>
+
+            <Label fx:id="lblMensaje" style="-fx-font-weight: bold;"/>
+
+        </VBox>
+    </center>
+</BorderPane>

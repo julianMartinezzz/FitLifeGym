@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fitlife.controller.PerfilController"
+            stylesheets="@../styles.css" styleClass="root"
+            prefWidth="1000" prefHeight="700">
+
+    <left>
+        <VBox spacing="5" prefWidth="200" styleClass="sidebar">
+            <padding><Insets top="30" left="10" right="10"/></padding>
+            <Label text="FitLife Gym" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 0 0 20 10;"/>
+
+            <Button text="Inicio" onAction="#volverMenu" styleClass="button-sidebar" maxWidth="Infinity"/>
+            <Button text="Perfil" styleClass="button-sidebar" style="-fx-text-fill: white; -fx-background-color: #222;" maxWidth="Infinity"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button text="Cerrar Sesión" onAction="#salir" styleClass="button-sidebar" style="-fx-text-fill: #e74c3c;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: #050505;">
+            <padding>
+                <Insets top="30" right="40" bottom="30" left="40"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <VBox>
+                    <Label text="Configuración" styleClass="label-breadcrumb"/>
+                    <Label text="Mi Perfil" styleClass="label-section-title"/>
+                </VBox>
+            </HBox>
+
+            <VBox styleClass="panel-oscuro" spacing="10" maxWidth="600">
+                <Label text="Información de Cuenta" styleClass="label-panel-title"/>
+
+                <HBox spacing="20">
+                    <VBox spacing="5">
+                        <Label text="Usuario / Correo" style="-fx-text-fill: #888; font-size: 12px;"/>
+                        <Label fx:id="lblUsuario" text="usuario@ejemplo.com" style="-fx-text-fill: white; -fx-font-weight: bold; font-size: 16px;"/>
+                    </VBox>
+
+                    <Region prefWidth="50"/>
+
+                    <VBox spacing="5">
+                        <Label text="Rol" style="-fx-text-fill: #888; font-size: 12px;"/>
+                        <Label fx:id="lblRol" text="CLIENTE" style="-fx-text-fill: #27ae60; -fx-font-weight: bold; font-size: 16px;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <VBox styleClass="panel-oscuro" spacing="15" maxWidth="600">
+                <Label text="Seguridad" styleClass="label-panel-title"/>
+                <Label text="Cambiar Contraseña" style="-fx-text-fill: white; font-size: 16px; font-weight: bold;"/>
+
+                <VBox spacing="5">
+                    <Label text="Contraseña Actual" style="-fx-text-fill: #888;"/>
+                    <PasswordField fx:id="txtPassActual" styleClass="text-field"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Nueva Contraseña" style="-fx-text-fill: #888;"/>
+                    <PasswordField fx:id="txtPassNueva" styleClass="text-field"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Confirmar Nueva Contraseña" style="-fx-text-fill: #888;"/>
+                    <PasswordField fx:id="txtPassConfirmar" styleClass="text-field"/>
+                </VBox>
+
+                <HBox alignment="CENTER_RIGHT">
+                    <Button text="Actualizar Contraseña" onAction="#cambiarPassword" styleClass="button-pill"/>
+                </HBox>
+            </VBox>
+
+            <Label fx:id="lblMensaje" style="-fx-font-weight: bold;"/>
+
+        </VBox>
+    </center>
+</BorderPane>

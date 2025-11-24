@@ -1,0 +1,380 @@
+/* ==================================================================
+   ESTILO DARK MODE - FITLIFE GYM (FIGMA REPLICA)
+   ================================================================== */
+
+/* 1. FONDO GENERAL (La oscuridad total) */
+.root {
+    -fx-background-color: #050505; /* Negro casi puro */
+    -fx-font-family: 'Segoe UI', sans-serif; /* Fuente por defecto */
+}
+
+/* 2. LA TARJETA DEL LOGIN */
+.login-card {
+    /* Negro con 85% de opacidad (el último número es la transparencia) */
+    -fx-background-color: rgba(10, 10, 10, 0.85);
+
+    -fx-border-color: #333333;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 40;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 15, 0, 0, 0);
+}
+
+/* 3. TÍTULO "Iniciar sesión" (Estilo Serif elegante) */
+.label-titulo-login {
+    -fx-text-fill: #E0E0E0;
+    -fx-font-family: 'Georgia', 'Times New Roman', serif; /* Fuente con remates */
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 20 0; /* Espacio debajo del título */
+}
+
+/* 4. ETIQUETAS PEQUEÑAS (Email, Contraseña) */
+.label-input {
+    -fx-text-fill: #AAAAAA; /* Gris claro */
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* 5. CAMPOS DE TEXTO (Inputs oscuros) */
+.text-field, .password-field {
+    -fx-background-color: #0A0A0A;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #555555;
+    -fx-border-color: #444444;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #FFFFFF; /* Borde blanco al seleccionar */
+}
+
+/* 6. BOTÓN BLANCO (El protagonista) */
+.button-login {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 10;
+}
+
+.button-login:hover {
+    -fx-background-color: #E0E0E0; /* Un poco gris al pasar el mouse */
+}
+
+/* 7. LINK OLVIDASTE CONTRASEÑA */
+.hyperlink-login {
+    -fx-text-fill: #AAAAAA;
+    -fx-font-size: 11px;
+    -fx-underline: false;
+    -fx-border-color: transparent;
+}
+
+/* ==================================================================
+   ESTILOS DEL MENÚ PRINCIPAL (DASHBOARD)
+   ================================================================== */
+
+/* Subtítulo "Seleccione una opción" */
+.label-subtitulo {
+    -fx-text-fill: #AAAAAA;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-padding: 0 0 15 0; /* Espacio abajo */
+}
+
+/* Botones del Menú (Estilo Blanco Uniforme) */
+.button-menu {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 12; /* Un poco más altos */
+    -fx-alignment: CENTER;
+}
+
+.button-menu:hover {
+    -fx-background-color: #E0E0E0; /* Gris claro al pasar el mouse */
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.2), 5, 0, 0, 0); /* Resplandor sutil */
+}
+
+/* Botón Salir (Opcional: Si quieres que se vea distinto o igual)
+   En tu diseño no se ve el botón salir, pero asumiré que debe ser igual o sutil. */
+.button-salir {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FF5555; /* Texto rojo */
+    -fx-border-color: #FF5555;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+.button-salir:hover {
+    -fx-background-color: rgba(255, 85, 85, 0.1);
+}
+
+/* ==================================================================
+   ESTILOS DASHBOARD (Sidebar y Tablas Oscuras)
+   ================================================================== */
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    -fx-background-color: #080808; /* Un poco más claro que el fondo puro */
+    -fx-border-color: transparent #333333 transparent transparent; /* Línea separadora derecha */
+    -fx-border-width: 0 1 0 0;
+}
+
+/* Botones de la Barra Lateral */
+.button-sidebar {
+    -fx-background-color: transparent;
+    -fx-text-fill: #888888;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+.button-sidebar:hover {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: rgba(255,255,255,0.05);
+}
+
+/* Header del Dashboard (Breadcrumbs) */
+.label-breadcrumb {
+    -fx-text-fill: #666666;
+    -fx-font-size: 12px;
+}
+
+/* Título de Sección (Serif) */
+.label-section-title {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: 'Georgia', serif;
+    -fx-font-size: 28px;
+    -fx-font-style: italic; /* Para ese toque elegante */
+}
+
+/* Botón "Nuevo Usuario" (Estilo Píldora Blanca) */
+.button-pill {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-background-radius: 50; /* Redondeo total */
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+.button-pill:hover {
+    -fx-background-color: #DDDDDD;
+}
+
+/* --- TABLA OSCURA (La parte difícil) --- */
+.table-view {
+    -fx-background-color: transparent; /* Fondo transparente */
+    -fx-base: #050505; /* Base oscura */
+    -fx-control-inner-background: #050505;
+    -fx-control-inner-background-alt: #0A0A0A; /* Filas alternas */
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 10;
+}
+
+/* Cabecera de Columnas */
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #333333 transparent; /* Línea abajo */
+    -fx-size: 40px;
+}
+.table-view .column-header .label {
+    -fx-text-fill: #AAAAAA;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Celdas de Datos */
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #222222 transparent; /* Línea separadora sutil */
+}
+.table-cell {
+    -fx-text-fill: #DDDDDD;
+    -fx-alignment: CENTER_LEFT;
+}
+/* Fila seleccionada */
+.table-row-cell:selected {
+    -fx-background-color: #222222;
+}
+
+/* ==================================================================
+   ESTILOS DE TARJETAS (GRID CLASES)
+   ================================================================== */
+
+/* Contenedor de los Filtros */
+.filter-bar {
+    -fx-background-color: #0F0F0F;
+    -fx-border-color: #333333;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+}
+
+/* Botones de Filtro (Borde gris) */
+.button-filter {
+    -fx-background-color: transparent;
+    -fx-border-color: #666666;
+    -fx-border-radius: 20;
+    -fx-text-fill: #AAAAAA;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 5 15;
+}
+.button-filter:hover {
+    -fx-border-color: #FFFFFF;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* LA TARJETA DE CLASE */
+.class-card {
+    -fx-background-color: #111111; /* Fondo muy oscuro */
+    -fx-border-color: #333333;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 5);
+    -fx-min-width: 350; /* Ancho fijo */
+    -fx-max-width: 350;
+}
+
+/* Título de la Clase */
+.label-card-title {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+
+/* Subtítulos (Instructor, Sala, Hora) */
+.label-card-info {
+    -fx-text-fill: #888888;
+    -fx-font-size: 12px;
+}
+
+/* Badge Verde (Cupo Disponible) */
+.badge-green {
+    -fx-border-color: #27ae60;
+    -fx-text-fill: #27ae60;
+    -fx-border-radius: 5;
+    -fx-padding: 2 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Badge Rojo (Sin Cupo) */
+.badge-red {
+    -fx-border-color: #c0392b;
+    -fx-text-fill: #c0392b;
+    -fx-border-radius: 5;
+    -fx-padding: 2 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* ==================================================================
+   ESTILOS ADMIN - GESTIÓN RESERVAS
+   ================================================================== */
+
+/* Contenedores con borde gris (Paneles) */
+.panel-oscuro {
+    -fx-background-color: transparent;
+    -fx-border-color: #333333;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 20;
+}
+
+/* Títulos de los paneles (ej: "Filtros", "Tabla de clases") */
+.label-panel-title {
+    -fx-text-fill: #AAAAAA;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-padding: 0 0 10 0;
+}
+
+/* Placeholder del Calendario */
+.calendar-placeholder {
+    -fx-background-color: rgba(255, 255, 255, 0.02);
+    -fx-border-color: #222222;
+    -fx-min-height: 150;
+    -fx-alignment: CENTER;
+}
+
+/* ==================================================================
+   ESTILOS DASHBOARD MÉTRICAS
+   ================================================================== */
+
+/* Contenedor de las 3 tarjetas */
+.stats-container {
+    -fx-alignment: CENTER;
+    -fx-padding: 0 0 20 0;
+}
+
+/* La Tarjeta Individual */
+.stat-card {
+    -fx-background-color: rgba(255, 255, 255, 0.03); /* Casi transparente */
+    -fx-border-color: #333333;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-min-width: 130;
+    -fx-alignment: CENTER;
+}
+
+/* Texto del Título (ej: Clientes) */
+.label-stat-title {
+    -fx-text-fill: #888888;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+}
+
+/* Texto del Número (ej: 45) */
+.label-stat-value {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* Colores específicos para los valores */
+.stat-blue { -fx-text-fill: #3498db; }
+.stat-green { -fx-text-fill: #27ae60; }
+.stat-orange { -fx-text-fill: #e67e22; }
+
+/* Badge Naranja (Pocos cupos) */
+.badge-orange {
+    -fx-border-color: #f39c12; /* Color naranja */
+    -fx-text-fill: #f39c12;
+    -fx-border-radius: 5;
+    -fx-padding: 2 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* 1. FONDO GENERAL CON IMAGEN */
+.root {
+    /* Color de respaldo por si la imagen falla */
+    -fx-background-color: #050505;
+
+    /* Aquí cargamos la imagen que subiste */
+    -fx-background-image: url('/images/fondo_login.jpg');
+
+    /* Esto hace que la imagen cubra toda la ventana sin deformarse */
+    -fx-background-size: cover;
+
+    /* Esto centra la imagen */
+    -fx-background-position: center center;
+}

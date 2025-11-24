@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fitlife.controller.HorarioController"
+            stylesheets="@../styles.css" styleClass="root"
+            prefWidth="1000" prefHeight="700">
+
+    <left>
+        <VBox spacing="5" prefWidth="200" styleClass="sidebar">
+            <padding><Insets top="30" left="10" right="10"/></padding>
+
+            <Label text="FitLife Gym" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 0 0 20 10;"/>
+
+            <Button text="Inicio" onAction="#volverMenu" styleClass="button-sidebar" maxWidth="Infinity"/>
+
+            <Button text="Clases" styleClass="button-sidebar" style="-fx-text-fill: white; -fx-background-color: #222;" maxWidth="Infinity"/>
+
+            <Button fx:id="btnMisReservas" text="Mis Reservas" onAction="#irAMisReservas" styleClass="button-sidebar" maxWidth="Infinity"/>        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: #050505;">
+            <padding>
+                <Insets top="30" right="40" bottom="30" left="40"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <VBox>
+                    <Label text="Inicio / Clases" styleClass="label-breadcrumb"/>
+                    <Label text="Clases" styleClass="label-section-title"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Cliente" style="-fx-text-fill: #888888; -fx-font-style: italic;"/>
+            </HBox>
+
+            <HBox spacing="15" styleClass="filter-bar" alignment="CENTER_LEFT">
+                <Label text="Filtros" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-style: italic;"/>
+                <Region prefWidth="10"/>
+
+                <ComboBox fx:id="filtroDia" promptText="Día" styleClass="combo-box" prefWidth="120"/>
+
+                <TextField fx:id="filtroInstructor" promptText="Instructor..." styleClass="text-field" prefWidth="120"/>
+
+                <TextField fx:id="filtroBuscar" promptText="Buscar clase..." styleClass="text-field" prefWidth="180"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="Aplicar" onAction="#aplicarFiltros" styleClass="button-pill" style="-fx-background-color: #666666;"/>
+
+                <Button text="X" onAction="#limpiarFiltros" styleClass="button-pill" style="-fx-background-color: #333; -fx-min-width: 30px;"/>
+            </HBox>
+
+            <ScrollPane fitToWidth="true" style="-fx-background: #050505; -fx-background-color: transparent;" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
+                <content>
+                    <FlowPane fx:id="contenedorTarjetas" hgap="20" vgap="20" style="-fx-background-color: #050505;">
+                        <padding>
+                            <Insets top="10" bottom="10"/>
+                        </padding>
+                    </FlowPane>
+                </content>
+            </ScrollPane>
+
+        </VBox>
+    </center>
+</BorderPane>

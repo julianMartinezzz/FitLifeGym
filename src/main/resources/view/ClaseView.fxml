@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600" prefWidth="900" styleClass="root" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fitlife.controller.ClaseController">
+
+    <left>
+        <VBox prefWidth="200" spacing="5" styleClass="sidebar">
+            <padding><Insets left="10" right="10" top="30" /></padding>
+            <Label style="-fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 0 0 20 10;" text="FitLife Gym" />
+            <Button maxWidth="Infinity" onAction="#volverMenu" styleClass="button-sidebar" text="Inicio" />
+            <Button text="Perfil" onAction="#irAPerfil" styleClass="button-sidebar" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="20" style="-fx-background-color: #050505;">
+            <padding>
+                <Insets bottom="30" left="40" right="40" top="30" />
+            </padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <VBox>
+                    <Label styleClass="label-breadcrumb" text="Administración / Clases" />
+                    <Label styleClass="label-section-title" text="Programar Clase" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#guardarClase" styleClass="button-pill" text="Crear Clase" />
+            </HBox>
+
+            <GridPane hgap="20" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50" />
+                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50" />
+                </columnConstraints>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label style="-fx-text-fill: #888888;" text="Actividad / Clase" />
+                    <ComboBox fx:id="comboNombre" maxWidth="Infinity" styleClass="combo-box" />
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label style="-fx-text-fill: #888888;" text="Día de la Semana" />
+                    <ComboBox fx:id="comboDia" maxWidth="Infinity" styleClass="combo-box" />
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label style="-fx-text-fill: #888888;" text="Instructor Asignado" />
+                    <ComboBox fx:id="comboInstructor" maxWidth="Infinity" promptText="Seleccione..." styleClass="combo-box" />
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label style="-fx-text-fill: #888888;" text="Hora de Inicio (HH:MM)" />
+                    <TextField fx:id="txtHora" promptText="Ej: 08:00" styleClass="text-field" />
+                </VBox>
+
+                <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <Label style="-fx-text-fill: #888888;" text="Cupo Máximo" />
+                    <TextField fx:id="txtCupo" promptText="Ej: 20" styleClass="text-field" />
+                </VBox>
+
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+
+            </GridPane>
+
+            <Label fx:id="lblMensaje" style="-fx-font-weight: bold;" />
+
+        </VBox>
+    </center>
+</BorderPane>
